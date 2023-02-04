@@ -41,11 +41,8 @@ function App() {
 
   //Add task
   const addTask = (e) => {
-    console.log("hi i m called from teh item form");
-    console.log(title);
     if (title) {
       e.preventDefault();
-      console.log(title);
       let newEntry = {
         title: title,
         description: "",
@@ -61,20 +58,15 @@ function App() {
       setTitle("");
     }
   };
-  console.log(toDo);
+
   //Delete Task
   const deleteTask = (id) => {
-    console.log("this is id here in delete task");
-    console.log(id);
     let newTasks = toDo.filter((task) => task.id !== id);
     setToDo(newTasks);
   };
-  console.log("this is after deleteing");
-  console.log(toDo);
 
   //mark task as done or completed
   const markDone = (id) => {
-    console.log("hi i am in markdone");
     let newTask = toDo.map((task) => {
       if (task.id === id) {
         return { ...task, completed: !task.completed };
@@ -96,32 +88,19 @@ function App() {
   };
   const completedTasks = toDo.filter((task) => task.completed);
 
-  //cancel update
-  const cancelUpdate = () => {
-       setUpdateData("");
-  };
-  //change task for update
-  const changeTask = (e) => {};
-  //update task
   const updateTask = (updateData, id) => {
-    console.log("this is the message from the updateTask here !");
-    console.log(updateData);
-    console.log(id);
     let newTask = toDo.map((task) => {
       if (task.id === id) {
-        console.log(task);
         task = updateData;
-        console.log(task);
-        task= { ...task, id: id,title:updateData.title }
-        console.log(task);
+        task = { ...task, id: id, title: updateData.title };
         return task;
       }
       return task;
     });
     setToDo(newTask);
-    setTitle("")
+    setTitle("");
   };
-  console.log(toDo);
+
   return (
     <div className="main-container">
       <header className="app-title">
@@ -155,6 +134,7 @@ function App() {
                 taskType={taskType}
                 addTask={addTask}
                 updateTask={updateTask}
+                handleTaskCompleted={handleTaskCompleted}
               />
             }
           />

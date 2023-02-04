@@ -13,7 +13,7 @@ const Login = ({updateState}) => {
   const { email, password } = formData;
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(e);
+
     if (loginDetails.email === email && loginDetails.password === password) {
       console.log("hi login successful");
      navigate("/TodoList", true);
@@ -27,7 +27,7 @@ const Login = ({updateState}) => {
     e.preventDefault();
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
-    console.log(formData);
+
   }
   const clickToSignup = (e) => {
     e.preventDefault();
@@ -74,7 +74,3 @@ const Login = ({updateState}) => {
 
 export default Login;
 
-// if(!location.path){
-//     console.log("please set the location path here")
-//     navigate("/success",true)
-// }

@@ -1,5 +1,4 @@
 import React from "react";
-import { v4 as uuidv4 } from "uuid";
 
 const TaskForm = ({ title, setTitle, addTask }) => {
   return (
@@ -11,9 +10,7 @@ const TaskForm = ({ title, setTitle, addTask }) => {
           onChange={(e) => {
             e.preventDefault();
             setTitle(e.target.value);
-            console.log(title);
-            return title;
-            setTitle('');
+            return title;   
           }}
           required
           value={title}

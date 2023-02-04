@@ -45,22 +45,13 @@ const ItemForm = ({
   const handleSave = async (values) => {
     setInitialValues(values);
     values.title = title;
-    console.log(values);
-    console.log("this is task type here ");
-    console.log(taskType);
-    console.log(toDo);
     if (taskType === "create") {
-      console.log("this is new task to be added now");
       setToDo([...toDo, values]);
       setTitle("");
       setModal(false);
     } else if (taskType === "update") {
-      console.log("hi i am in the update task here");
       values.title = title;
-      console.log(values);
-      console.log(updateData);
       updateTask(values, id);
-      console.log(updateData);
       setModal(false);
     }
   };

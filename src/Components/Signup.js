@@ -70,7 +70,7 @@ const Signup = () => {
             {errors.lastname && touched.lastname ? (
               <div>{errors.lastname}</div>
             ) : null}
-            {/* {console.log('formprops',formprops)}*/}
+        
             </div>
             <div>
             <label className="email-label">
